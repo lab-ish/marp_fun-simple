@@ -1,0 +1,449 @@
+/* 
+ * @theme fun
+ * @auto-scale true
+ */
+
+@import 'gaia';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+:root {
+  --font-weight-thin: 100;
+  --font-weight-extra-thin: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  --color-background: #fff;
+  --color-foreground: #000;
+  --color-highlight: #00f;
+  --color-dimmed: #888;
+  --color-main: #990000;
+  --color-link: #2B6121;
+}
+
+p, blockquote {
+  margin: 0;
+}
+
+strong {
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--color-highlight);
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
+}
+
+/* ======================================
+   FUN (Future University Hakodate) Theme
+   スライドサイズ: 960×720px (4:3)
+   ====================================== */
+section {
+  width: 960px;
+  height: 720px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: 40px;
+  letter-spacing: 0;
+  background: #ffffff;
+  color: #000000;
+  padding: 18px 18px 80px;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ======================================
+   共通テキストスタイル
+   ====================================== */
+
+section h1 {
+  color: var(--color-main);
+  font-weight: var(--font-weight-semi-bold);
+  font-size: 1.5em;
+  margin: 0 0 12px 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+section h2 {
+  color: var(--color-main);
+  font-weight: var(--font-weight-semi-bold);
+  font-size: 1.05em;
+  margin: 0 0 12px 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+section h3 {
+  color: var(--color-main);
+  font-weight: var(--font-weight-semi-bold);
+  font-size: 1em;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+/* 箇条書き Level1: ■ */
+section ul {
+  list-style: none;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+}
+
+section ul > li {
+  position: relative;
+}
+
+section ul > li::before {
+  content: '■';
+  color: #000000;
+  position: absolute;
+  font-size: 0.8em;
+  top: 0.2em;
+  left: -1.2em;
+}
+
+/* 箇条書き Level2: ○ */
+section ul ul {
+  padding-left: 1.5em;
+  line-height: 1.3;
+}
+
+section ul ul > li {
+  font-size: 0.9em;
+  left: -0.8em;
+}
+
+section ul ul > li::before {
+  content: '○';
+  position: absolute;
+  font-size: 0.4em;
+  top: 1.2em;
+  left: -2em;
+}
+
+/* 箇条書き Level3: ● */
+section ul ul {
+  line-height: 1.4;
+}
+
+section ul ul ul > li {
+  font-size: 0.8em;
+  left: -0.8em;
+}
+
+section ul ul ul > li::before {
+  content: '●';
+  position: absolute;
+  font-size: 0.3em;
+  top: 1.7em;
+  left: -2.2em;
+}
+
+/* リンク */
+section a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+/* ======================================
+   共通フッター横線 (section::before)
+   ====================================== */
+section::before {
+  content: '';
+  position: absolute;
+  top: 659px;
+  left: 14px;
+  right: 42px;
+  height: 2px;
+  background: var(--color-main);
+  display: block;
+  padding: 0;
+}
+
+/* ======================================
+   共通フッター
+   ====================================== */
+footer {
+  margin: 0;
+  padding: 0;
+}
+section footer {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  font-weight: var(--font-weight-regular);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 0.4em;
+  color: #333333;
+}
+
+section footer span.footer-left {
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  white-space: nowrap;
+}
+
+section footer span.footer-right {
+  position: absolute;
+  right: 89px;
+  top: 14px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ======================================
+   ページ番号バッジ
+   ====================================== */
+section::after {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--color-main);
+  color: #ffffff;
+  text-align: center;
+  line-height: 54px;
+  font-size: 24px;
+  left: 891px;
+  top: 659px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======================================
+   section / emph-section / title:
+   フッター横線・フッターテキスト非表示
+   ====================================== */
+section.section::before,
+section.emph-section::before {
+  /* 区切り横線に上書き (後述) */
+}
+
+section.title::before {
+  display: none;
+}
+
+section.section footer,
+section.emph-section footer,
+section.title footer {
+  display: none;
+}
+
+/* ======================================
+   section / emph-section:
+   ページ番号をプレーンな中央下部テキスト
+   ====================================== */
+section.section::after,
+section.emph-section::after {
+  background: transparent;
+  border-radius: 0;
+  color: var(--color-main);
+  width: auto;
+  height: auto;
+  line-height: normal;
+  left: 0;
+  right: 0;
+  top: 669px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: var(--font-weight-regular);
+}
+
+/* ======================================
+   タイトルページ (title)
+   ====================================== */
+/* ページ番号非表示    */
+section.title::after {
+  display: none;
+}
+
+section.title {
+  background-image: url("data:image/svg+xml;base64,  PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDBtbSIgaGVpZ2h0PSIzNzcuOTUyIiB2aWV3Qm94PSIwIDAgOTMuNTExIDkzLjUxMSI+PHBhdGggZD0iTTExMy43NjggMTExLjE0N2MxLjcxNyAxLjM2OCAyLjcwNCAzLjU2NSAyLjcwNCA1LjkzM2E3Ljg2IDcuODYgMCAwIDEtMTUuMTUxIDIuOTM2Yy0uNTMzLTEuMzIzLS43MDYtMi40NjItMS4wNDQtMy42NzgtMS41MzUtNS40OTktNi40ODgtOS41ODctMTIuNDY2LTkuNTg3LTcuMTIxIDAtMTIuODkzIDUuNzcyLTEyLjg5MyAxMi44OTMgMCA2LjgyIDUuMjkzIDEyLjM5OCAxMS45OTQgMTIuODYzIDEuNjk1LjExOSAyLjY1MS4wMDEgMy45MzguMDc2IDMuODk5LjIyNiA3LjAyIDMuMzYgNy4wMiA3LjI5OGE3LjMgNy4zIDAgMCAxLTEuNDggNC40MDljLS44MzEgMS4xLTIuMTYgMi4yMjctMi44OTQgMy4xOTMtMS4zOTEgMS44MzQtMi40MDggNC4wMTctMi40MDggNi41IDAgNS41MDcgNC40NjUgOS45NzMgOS45NzQgOS45NzMgMy4zNSAwIDYuMzQ3LTEuNjI4IDguMTIyLTQuMTg1LjQzMy0uNjI0IDEuNjI3LTIuNTIgMS45ODMtMy4wNTVhOC4wMyA4LjAzIDAgMCAxIDYuNjgxLTMuNThjMi40OSAwIDQuNjIgMS4yMiA2LjE4NiAyLjkxNy41OTguNjQ3IDEuMjcyIDEuOTAyIDIuMjcyIDMuNTA2IDMuMDA1IDQuODIgOC4xMzYgOC4yNDQgMTQuMjIzIDguMjQ0IDkuMDQ4IDAgMTYuMzg0LTcuMzM2IDE2LjM4NC0xNi4zODYgMC0zLjgyLTEuMzEtNy4zMzQtMy41LTEwLjEyMi0uODk2LTEuMTQyLTIuMDMyLTIuMzQtMi43NC0zLjM1My0uODU0LTEuMjE2LTEuNC0yLjY3Ni0xLjQtNC4yNzZhNy4yMyA3LjIzIDAgMCAxIDUuMTg0LTYuOTQyYzEuMTMtLjMyOSAyLjI2Mi0uNDEzIDMuNjgtLjY5OCA1Ljg0My0xLjE3MiAxMC4yNS02LjMyMiAxMC4yNS0xMi41MDggMC03LjA0NC01LjcxMi0xMi43NTUtMTIuNzU2LTEyLjc1NS0yLjI1NiAwLTQuMzIuNjk3LTYuMjE2IDEuNjE1LS45NDkuNDU5LTIuNTIzIDEuNjY1LTMuMTg4IDIuMDExYTUuMDUgNS4wNSAwIDAgMS0yLjMzMy41NTIgNS4xOSA1LjE5IDAgMCAxLTUuMTg5LTUuMTlsLjAwMS0uMTQ2YzAtMS4yMjYuMjEyLTIuNTU2LjMzMi0zLjA2My4yNjgtMS4xMzEuMzMzLTIuMzIxLjMzMy0zLjUyNyAwLTEwLjM0LTguMzgzLTE4LjcyMy0xOC43MjMtMTguNzIzcy0xOC43MjIgOC4zODMtMTguNzIyIDE4LjcyM2MwIDYuNDQgMy4yNTcgMTIuMTE2IDguMjA1IDE1LjQ5LjczLjUgMi44NDUgMi4wMTMgMy42MzYgMi42NDIiIHN0eWxlPSJmaWxsOiM5MDA7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOi4zNTI3NzgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC03NC44OTYgLTc0LjI5MikiLz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: right 55px bottom 67px;
+  background-size: 140px 140px;
+  padding: 0;
+}
+
+section.title h1 {
+  position: absolute;
+  top: 66px;
+  left: 66px;
+  right: 66px;
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.3;
+}
+
+section.title h2 {
+  position: absolute;
+  top: 220px;    /* H1の下 (推定) */
+  left: 66px;
+  right: 66px;
+  margin: 0;
+  font-size: 1.3em;
+}
+
+section.title .author {
+  position: absolute;
+  top: 537px;
+  left: 66px;
+  right: 220px;
+  text-align: right;
+  font-size: 0.65em;
+}
+
+section.title .affiliation {
+  position: absolute;
+  top: 610px;
+  left: 66px;
+  right: 220px;
+  text-align: right;
+  font-size: 0.65em;
+}
+
+/* ======================================
+   デフォルトレイアウト
+   ====================================== */
+/* デフォルトのスタイルをそのまま適用 */
+
+/* ======================================
+   文献付きデフォルトレイアウト (ref-content)
+   div.ref: 小フォント、フッター上部固定
+   ====================================== */
+section.ref-content div.ref {
+  position: absolute;
+  bottom: 65px;
+  left: 18px;
+  right: 18px;
+  font-size: 0.4em;
+  color: #444444;
+  border-left: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+section.ref-content div.ref p {
+  margin: 0;
+  padding: 0;
+}
+
+section.ref-content span.ref-label {
+  font-size: 0.65em;
+}
+
+/* ======================================
+   2カラムレイアウト (two-content)
+   .columns を2列flexレイアウト
+   ====================================== */
+section.two-content .columns {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+section.two-content .columns > div {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ======================================
+   セクションタイトルレイアウト (section)
+   背景: 白, テキスト: #990000
+   ====================================== */
+section.section {
+  padding: 0;
+  text-align: center;
+}
+
+/* section: フッター横線を区切り横線に上書き */
+section.section::before {
+  top: 416px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--color-main);
+  display: block;
+}
+
+section.section h1 {
+  position: absolute;
+  top: 240px;
+  left: 14px;
+  right: 14px;
+  text-align: center;
+  margin: 0;
+  font-size: 1.4em;
+}
+
+section.section h2 {
+  position: absolute;
+  top: 484px;
+  left: 14px;
+  right: 14px;
+  text-align: center;
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: var(--font-weight-regular);
+}
+
+/* ======================================
+   強調セクションタイトルレイアウト (emph-section)
+   背景: #990000, テキスト: 白
+   ====================================== */
+section.emph-section {
+  background: var(--color-main);
+  color: #ffffff;
+  padding: 0;
+  text-align: center;
+}
+
+/* emph-section: 区切り横線を白で上書き */
+section.emph-section::before {
+  top: 416px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+}
+
+section.emph-section h1 {
+  position: absolute;
+  top: 240px;
+  left: 14px;
+  right: 14px;
+  text-align: center;
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.4em;
+}
+
+section.emph-section h2 {
+  position: absolute;
+  top: 484px;
+  left: 14px;
+  right: 14px;
+  text-align: center;
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.9em;
+  font-weight: var(--font-weight-regular);
+}
+
+section.emph-section::after {
+  color: #ffffff;
+}
