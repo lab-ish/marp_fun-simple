@@ -39,6 +39,10 @@ code {
   font-family: 'Source Code Pro', monospace;
 }
 
+table {
+  font-size: 80%;
+}
+
 /* ======================================
    FUN (Future University Hakodate) Theme
    スライドサイズ: 960×720px (4:3)
@@ -61,6 +65,10 @@ section {
 
 div.centering {
   width: 100%;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -386,7 +394,7 @@ section.section::before {
 
 section.section h1 {
   position: absolute;
-  top: 240px;
+  bottom: 320px;
   left: 14px;
   right: 14px;
   text-align: center;
@@ -428,7 +436,7 @@ section.emph-section::before {
 
 section.emph-section h1 {
   position: absolute;
-  top: 240px;
+  bottom: 320px;
   left: 14px;
   right: 14px;
   text-align: center;
