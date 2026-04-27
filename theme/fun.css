@@ -21,6 +21,7 @@
   --color-background: #fff;
   --color-foreground: #000;
   --color-highlight: #00f;
+  --color-highlight-back: #aaf;
   --color-dimmed: #888;
   --color-main: #990000;
   --color-link: #2B6121;
@@ -67,12 +68,19 @@ section {
   overflow: hidden;
 }
 
-div.centering {
+section div.centering {
   width: 100%;
   display: flex;
   margin: 0;
   flex-direction: column;
   align-items: center;
+}
+
+section div.emph-box {
+  background: var(--color-highlight-back);
+  color: var(--color-highlight);
+  border: solid var(--color-highlight) 2px;
+  padding: 12px;
 }
 
 /* ======================================
@@ -103,6 +111,10 @@ section h3 {
   font-size: 1em;
   margin: 0 0 8px 0;
   padding: 0;
+}
+
+section ol {
+  margin: 0;
 }
 
 /* 箇条書き Level1: ■ */
