@@ -80,3 +80,64 @@ def main():
 <!-- _class: emph-section -->
 # 強調セクションタイトル<br>2行目Title
 ## サブタイトル<br>2行目Subtitle
+
+---
+<!-- _class: section -->
+
+# 以降はTips
+
+---
+<style scoped>section {font-size: 37px;}</style>
+
+# 入りきらないとき
+
+- 少しだけフォントサイズを小さくするのが良い
+- ページ先頭にそのページのみに有効な形で `style` を定義する
+
+---
+# 中央揃え
+
+- `centering` クラスの `div` を配置すると中央揃えとなるようにしてある
+  - 表なども入れられる
+
+<div class="centering">
+
+| 項目1 | 項目2 | 項目3 |
+|--|--|--|
+| A | 0 | 1 | 2 |
+| B | 3 | 4 | 5 |
+
+</div>
+
+---
+# 強調したボックス
+
+- `emph-box` クラスの `div` を配置すると強調のためのボックスを配置する
+
+<div class="centering">
+<div class="emph-box">ここは強調されたボックス内！！</div>
+</div>
+
+---
+# 画像の配置
+
+- こんな形で埋め込める
+  - ベクトルはSVGが良い(PDF画像は貼れない)
+- `--allow-local-files` オプションを付けて実行しないと手元のファイルにはアクセスできない
+
+<div class="centering">
+
+![width:200px center](./img/test.svg)
+
+</div>
+
+---
+# 番号付きリスト
+
+1. markdownの番号付きリストも普通に使える
+1. 2番目
+   1. 2-1
+   1. 2-2
+1. 3番目
+   - 番号なし1
+   - 番号なし2
