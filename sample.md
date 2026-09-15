@@ -141,3 +141,23 @@ def main():
 1. 3番目
    - 番号なし1
    - 番号なし2
+
+---
+<!-- _class: ref-content -->
+# 図＋出典キャプション
+
+- `fig` クラスの `div` に画像と `src` クラスの `div` (出典) を入れる
+  - 引用図は `src` に「出典: [ラベル] Fig. X より引用」と書く
+
+<div class="fig">
+
+![height:250px](./img/test.svg)
+
+<div class="src">出典: [wang'14] Fig. 1 より引用</div>
+</div>
+
+<div class="ref">
+
+[wang'14] E-eyes: In-home device-free activity identification using fine-grained WiFi signatures, ACM MobiCom.
+
+</div>

@@ -476,3 +476,26 @@ section.emph-section h2 {
 section.emph-section::after {
   color: #ffffff;
 }
+
+/* ======================================
+   図＋出典キャプション (fig)
+   div.fig の中に画像と div.src (出典) を置く
+   ====================================== */
+section div.fig {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+section div.fig img {
+  max-width: 100%;
+}
+
+section div.fig div.src {
+  font-size: 0.4em;
+  color: #444444;
+  line-height: 1.3;
+  margin-top: 2px;
+}
