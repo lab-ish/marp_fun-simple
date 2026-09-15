@@ -499,3 +499,10 @@ section div.fig div.src {
   line-height: 1.3;
   margin-top: 2px;
 }
+
+/* fig.right: 図を右に寄せて本文を回り込ませる。幅は画像側の width: 指定で決める */
+section div.fig.right {
+  float: right;
+  width: auto;
+  margin: 0 0 8px 20px;
+}
