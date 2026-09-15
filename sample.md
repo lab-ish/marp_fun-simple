@@ -161,3 +161,18 @@ def main():
 [wang'14] E-eyes: In-home device-free activity identification using fine-grained WiFi signatures, ACM MobiCom.
 
 </div>
+
+---
+# 図の右寄せ回り込み
+
+<div class="fig right">
+
+![width:300px](./img/test.svg)
+
+<div class="src">出典: [wang'14] Fig. 2 より引用</div>
+</div>
+
+- `fig right` クラスにすると図が右に寄り、本文が回り込む
+  - 図の幅は `![width:300px]` で指定する
+- 横長の図は回り込みにせず本文の下に置く
+- 縦長・正方形に近い図に向く
