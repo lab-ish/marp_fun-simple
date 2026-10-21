@@ -10,8 +10,8 @@ math: katex
 # タイトル<br>Title
 ## Subtitle
 
-<div class="author"><u>Shigemi ISHIDA</u><sup>*1</sup>, Yutaka ARAKAWA<sup>*2</sup></div>
-<div class="affiliation"><sup>*1</sup>Future University Hakodate, <sup>*2</sup>Kyushu University</div>
+<div class="author"><u>Shigemi ISHIDA</u><sup>*1</sup>, Taro MIRAI<sup>*2</sup></div>
+<div class="affiliation"><sup>*1</sup>Future University Hakodate, <sup>*2</sup>HogeHoge University</div>
 
 ---
 # デフォルトレイアウト
